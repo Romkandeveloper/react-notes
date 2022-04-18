@@ -3,6 +3,7 @@ import {Form} from "../components/Form";
 import {Notes} from "../components/Notes";
 import {FirebaseContext} from '../context/firebase/firebaseContext';
 import {Loader} from '../components/Loader';
+import empty from '../img/empty.png';
 
 export const Home = () => {
 
@@ -11,8 +12,6 @@ export const Home = () => {
     useEffect(()=>{
         fetchNotes();
     }, []);
-
-    alert(fetchNotes);
 
     return (
 
@@ -23,7 +22,8 @@ export const Home = () => {
 
             {loading
             ? <Loader />
-            : <Notes notes={notes} onRemove={removeNote}/>
+            : Object.keys(notes) ? <Notes notes={notes} onRemove={removeNote}/>
+            : <img className="emptyImg" src={empty} alt="" />
             }
 
         </React.Fragment>

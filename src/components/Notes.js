@@ -8,7 +8,7 @@ export const Notes = ({notes, onRemove}) => {
             {notes.map(note =>
                 <li
                     className="list-group-item note"
-                    key={note.is}
+                    key={note.id}
                 >
                     <div className="note__info">
                         <strong className="note__title">{note.title}</strong>

@@ -4,7 +4,7 @@ const handlers = {
     [SHOW_LOADER]: state => ({...state, loading: true}),
     [ADD_NOTE]: (state, {payload}) => ({
         ...state,
-        notes: [...state, payload]
+        notes: [...state.notes, payload]
     }),
     [FETCH_NOTES]: (state, {payload}) => ({...state, notes: payload, loading: false}),
     [REMOVE_NOTE]: (state, {payload}) => ({
@@ -16,5 +16,8 @@ const handlers = {
 
 export const firebaseReducer = (state,action) => {
     const handle = handlers[action.type] || handlers.DEFAULT;
+
+    console.log(state.notes);
+
     return handle(state,action);
 }
