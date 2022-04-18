@@ -14,4 +14,17 @@ code {
     monospace;
 }
 
+.note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    margin-right: 1rem;
+  }
+
+
+
+}
+
 
