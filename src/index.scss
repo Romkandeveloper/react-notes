@@ -24,49 +24,10 @@ code {
   }
 }
 
-.alert {
-  position: relative;
-
-
-  &-enter {
-    opacity: 0;
-  }
-
-  &-enter-active {
-    opacity: 1;
-    transition: opacity 300ms ease-in-out;
-  }
-
-  &-exit-active {
-    opacity: 0;
-    transition: opacity 300ms ease-in-out;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 2.5px;
-    opacity: .3;
-    background: black;
-    transition: linear;
-    animation: changeWidth 5s linear 1;
-    animation-fill-mode: forwards;
-  }
-
-  @keyframes changeWidth {
-    from {width: 100%}
-    to {width: 0}
-  }
-}
-
 .emptyImg {
   display: block;
   max-width: 500px;
   margin: 25px auto;
-
 }
 
 

@@ -6,10 +6,6 @@ export const Alert = () => {
 
     const {alert, hide} = useContext(AlertContext)
 
-    useEffect(() => {
-       setTimeout(hide, 5000)
-    }, [alert]);
-
     if(!alert.visible) {
         return null;
     }

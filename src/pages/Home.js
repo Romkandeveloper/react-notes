@@ -22,7 +22,7 @@ export const Home = () => {
 
             {loading
             ? <Loader />
-            : Object.keys(notes) ? <Notes notes={notes} onRemove={removeNote}/>
+            : notes.length ? <Notes notes={notes} onRemove={removeNote}/>
             : <img className="emptyImg" src={empty} alt="" />
             }
 
